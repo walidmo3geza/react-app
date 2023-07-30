@@ -1,31 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./Components/Root";
-import ErrorPage from "./Components/ErrorPage";
-import Contact from "./Components/Contact";
+import App from "./App";
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Root />,
-		errorElement: <ErrorPage />,
-		children: [
-			{
-				path: "contacts/:contactId",
-				element: <Contact />,
-			},
-		],
-	},
-]);
+const root = createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<RouterProvider router={router} />
-	</React.StrictMode>
+	<App />
 );
 
 // If you want to start measuring performance in your app, pass a function
