@@ -34,7 +34,7 @@ export default function InterseptoprContextProvider(props) {
 		}
 	);
 	return (
-		<InterseptoprContext.Provider>
+		<InterseptoprContext.Provider value={null}>
 			{props.children}
 		</InterseptoprContext.Provider>
 	);
